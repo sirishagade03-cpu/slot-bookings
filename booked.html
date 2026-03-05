@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booked Slots</title>
+</head>
+<body>
+    <h2>Booked Slots</h2>
+
+    {% for slot in booked %}
+        <p>
+            {{ slot.slot_time }} - Booked by {{ slot.booked_by }}
+        </p>
+    {% endfor %}
+
+    <br>
+    <a href="/">Back</a>
+</body>
+</html>

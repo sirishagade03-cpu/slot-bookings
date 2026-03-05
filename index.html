@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Slot Booking</title>
+</head>
+<body>
+    <h2>Available Slots</h2>
+
+    {% for slot in slots %}
+        <p>
+            {{ slot.slot_time }} -
+            {{ slot.status }}
+
+            {% if slot.status == "Available" %}
+                <form action="/book/{{ slot.id }}" method="post">
+                    <input type="text" name="name" placeholder="Enter your name" required>
+                    <button type="submit">Book</button>
+                </form>
+            {% endif %}
+        </p>
+    {% endfor %}
+
+    <br>
+    <a href="/booked">View Booked Slots</a>
+</body>
+</html>
